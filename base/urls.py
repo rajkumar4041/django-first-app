@@ -7,5 +7,5 @@ Merge with unrelated histories
 """
 urlpatterns=[
     path('',views.home,name="home"),
-    path('room/',views.room,name="room")
+    path('room/',views.room,name="room")]
 
