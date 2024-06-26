@@ -11,7 +11,6 @@ urlpatterns = [
 
 
 
-print("val")
 
 
 
