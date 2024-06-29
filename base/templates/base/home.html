@@ -9,7 +9,12 @@
 <div>
   <div>
     {% for room in rooms %}
-    <div><h1>{{room.id}}-- {{room.name}}</h1></div>
+    <div>
+        <!-- """ view name base url """ -->
+      <a href="{% url 'room' room.id %}"
+        ><h1>{{room.id}} - {{room.name}}</h1></a
+      >
+    </div>
     {% endfor%}
   </div>
 </div>
