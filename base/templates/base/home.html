@@ -9,12 +9,17 @@
 <div>
   <div>
     {% for room in rooms %}
-    <div>
-        <!-- """ view name base url """ -->
+    <div
+      style="display: flex; gap: 20px; align-items: center; margin-bottom: 40px"
+    >
+      <!-- """ view name base url """ -->
       <a href="{% url 'room' room.id %}"
         ><h1>{{room.id}} - {{room.name}}</h1></a
       >
+      <span>@ {{room.host.username}}</span>
+      <small>{{room.topic.name}}</small>
     </div>
+    <hr />
     {% endfor%}
   </div>
 </div>
