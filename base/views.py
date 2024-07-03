@@ -4,11 +4,11 @@ from .models import Room
 
 # Create your views here.
 
-rooms = [
-    {"id": 1, "name": "learn django"},
-    {"id": 2, "name": "learn react"},
-    {"id": 3, "name": "learn mern Stack"},
-]
+# rooms = [
+#     {"id": 1, "name": "learn django"},
+#     {"id": 2, "name": "learn react"},
+#     {"id": 3, "name": "learn mern Stack"},
+# ]
 
 
 def home(request):
@@ -19,11 +19,15 @@ def home(request):
 
 
 def room(request, pk):
-    room = None
-    for it in rooms:
-        if it["id"] == int(pk):
-            room = it
-
+    # for it in rooms:
+    #     if it["id"] == int(pk):
+    #         room = it
+    room = Room.objects.get(id=pk)
     context = {"room": room}
 
     return render(request, "base/room.html", context)
+
+
+def create_room(request):
+    content = {}
+    return render(request, "base/room_form.html", content)
